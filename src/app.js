@@ -16,34 +16,44 @@ function addNotepad(){
     textpad.classList.add('Notepad')                      //gives the textarea a class
     noteDiv.appendChild(textpad)                         //makes it go into the note div
 
-    saveButton = document.createElement("button");           //makes a button
+    const saveButton = document.createElement("button");           //makes a button
     saveButton.classList.add('save')                         //gives the button a class
     saveButton.innerHTML = "Save";                           //makes the button say Save
     noteDiv.appendChild(saveButton);                         //puts the button in the note div
 
-    deletebutton = document.createElement("button");         //makes a button
+    const deletebutton = document.createElement("button");         //makes a button
     deletebutton.classList.add('delete')                     //gives the button a class
     deletebutton.innerHTML = "Delete";                       //makes the button say Delete
     noteDiv.appendChild(deletebutton);                       //puts the button in the note div
 
   }
 }
-document.addEventListener('click', e =>{
-  if (noteInProgress  === true){
-    const Deletebutton = document.querySelector('.delete');
-    Deletebutton.addEventListener('click', Delete);
+document.addEventListener('click', e =>{                            // will triger if anything is cliked
+  if (noteInProgress  === true){                                    
+    const Deletebutton = document.querySelector('.delete');         //looks for delete button
+    Deletebutton.addEventListener('click', Delete);                 //triger if  delete button is kliked
   
-    function Delete(){
-      console.log("woked")
-      const noteDiv = document.getElementsByClassName("Notediv")[0]
-      //noteDiv.removeChild("Notepad");
-      //noteDiv.removeChild("save");
-      //noteDiv.removeChild("delete");
-      noteDiv.remove();
+    function Delete(){                                              
+      const noteDiv = document.getElementsByClassName("Notediv")[0] //finds the Note div
+      noteDiv.remove();                                             
+      noteInProgress  = false
     }
-  
-  }
+    const Savebutton = document.querySelector('.save');         //looks for save button
+    Savebutton.addEventListener('click', save);                 //triger if save button is kliked
 
+    function save(){   
+      let note = 1                                           
+      saveButton = document.createElement("p");                          //makes a paragraph
+      saveButton.classid = "note" + note                                //gives the paragraph a id
+      note ++
+      const Notepad = document.querySelector('.Notepad').innerHTML
+      saveButton.innerHTML = Notepad;                                //makes the paragraph = Notepad
+      const sidenav = document.querySelector('.notes-list')
+      sidenav.appendChild(saveButton); 
+    }
+    
+
+  }
 }, capture = true);
 
 
