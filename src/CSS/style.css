@@ -134,3 +134,10 @@ footer p {
   color: var(--text);
   font-size: var(--lrg-txt);
 }
+
+.Note {
+  width: 5em;
+  height: 2em;
+  box-shadow: 0px 0px 10px var(--not-black);
+
+}
