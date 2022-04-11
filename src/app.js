@@ -1,7 +1,10 @@
-const notes = [
-  { 
-    title: "first note", 
-    noteBody: "this is an example note",
-    id: 1 
-  }
-]
+let clone = false
+
+const button = document.querySelector('.icons');
+
+button.addEventListener('click', addNotepad);
+
+function addNotepad(){
+  const newNote = document.createElement("div")
+  document.body.appendChild(newNote)
+}
