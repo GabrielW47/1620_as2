@@ -138,15 +138,18 @@ footer p {
 .Notediv {
   width: 60vh;
   height: 50vh;
-  box-shadow: 0px 0px 10px var(--not-black);
   color: var(--not-green);
-  display: flex;
+  align-content: flex-start
 }
 
 .Notepad {
   font-size: .5cm;
+  box-shadow: 0px 0px 10px var(--not-black);
+  width: 60vh;
+  height: 30vh;
 }
+
 button{
-  width: 15vh;
-  height: 10vh;
+  width: 10vh;
+  height: 7vh;
 }

@@ -6,25 +6,25 @@ const noteContainer = document.getElementsByClassName("write-note-area")[0]
 function addNotepad(){
   if (noteInProgress === false){      //looks to see if there is a note being worked on.
     noteInProgress = true
-    let newNote = document.createElement("div")      //makes the div
+    const newNote = document.createElement("div")      //makes the div
     newNote.classList.add('Notediv')                    //gives the div a class
     noteContainer.appendChild(newNote)                  //makes the div go where its sapost to
 
     const noteDiv = document.getElementsByClassName("Notediv")[0]  //finds the note div 
 
-    newNote = document.createElement("textarea")     //makes the textarea
-    newNote.classList.add('Notepad')                 //gives the textarea a class
-    noteDiv.appendChild(newNote)                     //makes it go into the note div
+    const textpad = document.createElement("textarea")     //makes the textarea
+    textpad.classList.add('Notepad')                      //gives the textarea a class
+    noteDiv.appendChild(textpad)                         //makes it go into the note div
 
-    newNote = document.createElement("button");
-    newNote.classid.add('save')
-    btn.innerHTML = "Save";
-    noteDiv.appendChild(newNote);
+    saveButton = document.createElement("button");
+    saveButton.classList.add('save')
+    saveButton.innerHTML = "Save";
+    noteDiv.appendChild(saveButton);
 
-    newNote = document.createElement("button");
-    newNote.classid.add('delete')
-    btn.innerHTML = "Delete";
-    noteDiv.appendChild(newNote);
+    deletebutton = document.createElement("button");
+    deletebutton.classList.add('delete')
+    deletebutton.innerHTML = "Delete";
+    noteDiv.appendChild(deletebutton);
 
   }
 }
