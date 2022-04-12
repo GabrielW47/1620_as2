@@ -35,21 +35,31 @@ document.addEventListener('click', e =>{                            // will trig
   
     function Delete(){                                              
       const noteDiv = document.getElementsByClassName("Notediv")[0] //finds the Note div
-      noteDiv.remove();                                             
+      noteDiv.remove();
       noteInProgress  = false
     }
     const Savebutton = document.querySelector('.save');         //looks for save button
     Savebutton.addEventListener('click', save);                 //triger if save button is kliked
+    let noteBody = []
 
     function save(){   
       let note = 1                                           
-      saveButton = document.createElement("p");                          //makes a paragraph
-      saveButton.classid = "note" + note                                //gives the paragraph a id
-      note ++
-      const Notepad = document.querySelector('.Notepad').innerHTML
-      saveButton.innerHTML = Notepad;                                //makes the paragraph = Notepad
-      const sidenav = document.querySelector('.notes-list')
-      sidenav.appendChild(saveButton); 
+      const saveText = document.createElement("p");                          //makes a paragraph
+      saveText.classid = "note" + note                                //gives the paragraph a id
+      const sidelist = document.querySelector('.notes-list');
+      sidelist.appendChild(saveText);
+
+      
+      let notes = [];
+      const textarea = document.querySelector('.Notepad');
+      const textareaValue = textarea.value;
+      notes = textareaValue.split('\n');
+      console.log(notes)
+
+      saveText.innerText = notes[0]
+      notes.pop[0]
+      noteBody.push(notes)
+      Delete()
     }
     
 
