@@ -44,8 +44,8 @@ document.addEventListener('click', e =>{                            // will trig
 
     function save(){   
       let note = 1                                           
-      const saveText = document.createElement("p");                          //makes a paragraph
-      saveText.classid = "note" + note                                //gives the paragraph a id
+      const saveText = document.createElement("ul");                          //makes a ul
+      saveText.classid = "note" + note                                //gives the ul a id
       const sidelist = document.querySelector('.notes-list');
       sidelist.appendChild(saveText);
 
@@ -54,11 +54,11 @@ document.addEventListener('click', e =>{                            // will trig
       const textarea = document.querySelector('.Notepad');
       const textareaValue = textarea.value;
       notes = textareaValue.split('\n');
-      console.log(notes)
+      console.log(notes);
 
-      saveText.innerText = notes[0]
-      notes.pop[0]
-      noteBody.push(notes)
+      saveText.innerText = notes[0];
+      notes.pop[0];
+      noteBody.push(notes);
       Delete()
     }
     
