@@ -1,4 +1,5 @@
 let noteInProgress = false
+let note = 1
 const button = document.querySelector('.icons');
 button.addEventListener('click', addNotepad);
 const noteContainer = document.getElementsByClassName("write-note-area")[0]
@@ -38,17 +39,19 @@ document.addEventListener('click', e =>{                            // will trig
       noteDiv.remove();
       noteInProgress  = false
     }
+    
     const Savebutton = document.querySelector('.save');         //looks for save button
     Savebutton.addEventListener('click', save);                 //triger if save button is kliked
     let noteBody = []
 
-    function save(){   
-      let note = 1                                           
+    function save(){                                        
       const saveText = document.createElement("ul");                          //makes a ul
-      saveText.classid = "note" + note                                //gives the ul a id
+      saveText.setAttribute('id',"note" + note);                                  //gives the ul a id
+      note ++;
+      saveText.classList.add('noteName')
       const sidelist = document.querySelector('.notes-list');
       sidelist.appendChild(saveText);
-
+      
       
       let notes = [];
       const textarea = document.querySelector('.Notepad');
@@ -61,8 +64,7 @@ document.addEventListener('click', e =>{                            // will trig
       noteBody.push(notes);
       Delete()
     }
-    
-
+      
   }
 }, capture = true);
 
