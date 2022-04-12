@@ -29,6 +29,7 @@ function addNotepad(){
 
   }
 }
+let noteBody = []
 document.addEventListener('click', e =>{                            // will triger if anything is cliked
   if (noteInProgress  === true){                                    
     const Deletebutton = document.querySelector('.delete');         //looks for delete button
@@ -42,7 +43,7 @@ document.addEventListener('click', e =>{                            // will trig
     
     const Savebutton = document.querySelector('.save');         //looks for save button
     Savebutton.addEventListener('click', save);                 //triger if save button is kliked
-    let noteBody = []
+    
 
     function save(){                                        
       const saveText = document.createElement("ul");                          //makes a ul
@@ -60,11 +61,34 @@ document.addEventListener('click', e =>{                            // will trig
       console.log(notes);
 
       saveText.innerText = notes[0];
-      notes.pop[0];
+      notes.pop;
       noteBody.push(notes);
       Delete()
     }
-      
+
+    const list = document.querySelector('.side-note-menu');
+    list.addEventListener('click', e =>{
+
+      const notename = document.querySelector('.noteName');         //looks for save button
+      notename.addEventListener('click', display);
+
+      function display(){
+        for (let note in noteBody){
+          const notediv = document.createElement("div")
+          const readnoteContainer = document.getElementsByClassName("read-note-area")[0]
+          readnoteContainer.appendChild(notediv)
+
+          const noteh = document.createElement("h2")
+          noteh.innerText = note[0]
+          noteh.appendChild(notediv)
+
+          const notebody = document.createElement("p")
+          notebody.innerText = note
+          notebody.appendChild(notediv)
+        }
+      }
+
+    }, capture = true);
   }
 }, capture = true);
 
